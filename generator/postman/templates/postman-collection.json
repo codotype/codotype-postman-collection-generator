@@ -6,7 +6,7 @@
     "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
   },
   "item": [
-    <%_ blueprint.schemas.forEach((schema) => { _%>
+    <%_ blueprint.schemas.forEach((schema, schemaIndex) => { _%>
     {
       "name": "<%= schema.identifier_plural %>",
       "description": "",
@@ -43,7 +43,7 @@
             ],
             "body": {
               "mode": "raw",
-              "raw": "{\n\t\"label\": \"Get made\",\n\t\"assignee_id\": \"5bd10a50cc243833fc5396fc\"\n}"
+              "raw": "<%- buildModelObject(schema) %>"
             },
             "url": {
               "raw": "{{host}}/api/<%= schema.identifier_plural %>",
@@ -66,14 +66,14 @@
             "header": [],
             "body": {},
             "url": {
-              "raw": "{{host}}/api/<%= schema.identifier_plural %>/5bd10a59cc243833fc5396fd",
+              "raw": "{{host}}/api/<%= schema.identifier_plural %>/{{<%= schema.identifier %>-id}}",
               "host": [
                 "{{host}}"
               ],
               "path": [
                 "api",
                 "<%= schema.identifier_plural %>",
-                "5bd10a59cc243833fc5396fd"
+                "{{<%= schema.identifier %>-id}}"
               ]
             },
             "description": ""
@@ -87,14 +87,14 @@
             "header": [],
             "body": {},
             "url": {
-              "raw": "{{host}}/api/<%= schema.identifier_plural %>/5bd10a59cc243833fc5396fd",
+              "raw": "{{host}}/api/<%= schema.identifier_plural %>/{{<%= schema.identifier %>-id}}",
               "host": [
                 "{{host}}"
               ],
               "path": [
                 "api",
                 "<%= schema.identifier_plural %>",
-                "5bd10a59cc243833fc5396fd"
+                "{{<%= schema.identifier %>-id}}"
               ]
             },
             "description": ""
@@ -108,14 +108,14 @@
             "header": [],
             "body": {},
             "url": {
-              "raw": "{{host}}/api/<%= schema.identifier_plural %>/5bd10a59cc243833fc5396fd",
+              "raw": "{{host}}/api/<%= schema.identifier_plural %>/{{<%= schema.identifier %>-id}}",
               "host": [
                 "{{host}}"
               ],
               "path": [
                 "api",
                 "<%= schema.identifier_plural %>",
-                "5bd10a59cc243833fc5396fd"
+                "{{<%= schema.identifier %>-id}}"
               ]
             },
             "description": ""
@@ -123,7 +123,7 @@
           "response": []
         }
       ]
-    },
+    }<%= helpers.trailingComma(blueprint.schemas, schemaIndex) %>
     <%_ }) _%>
   ],
   "variable": [
@@ -132,6 +132,14 @@
       "key": "host",
       "value": "localhost:4000",
       "type": "text"
-    }
+    },
+    <%_ blueprint.schemas.forEach((schema, schemaIndex) => { _%>
+    {
+      "id": "<%= 'XXab2fa-8350-4b78-b612-' + schema.identifier %>",
+      "key": "<%= schema.identifier %>-id",
+      "value": "Put a <%= schema.label %> ID here",
+      "type": "text"
+    }<%= helpers.trailingComma(blueprint.schemas, schemaIndex) %>
+    <%_ }) _%>
   ]
 }
