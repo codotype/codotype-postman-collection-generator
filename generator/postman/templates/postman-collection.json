@@ -1,0 +1,137 @@
+{
+  "info": {
+    "name": "<%= blueprint.label %>",
+    "_postman_id": "XX4d47e4-2976-0175-1352-cad94b31c980",
+    "description": "A Postman collection built around the <%= blueprint.label %> app build with Codotype.io",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    <%_ blueprint.schemas.forEach((schema) => { _%>
+    {
+      "name": "<%= schema.identifier_plural %>",
+      "description": "",
+      "item": [
+        {
+          "name": "/api/<%= schema.identifier_plural %>",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{host}}/api/<%= schema.identifier_plural %>",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "<%= schema.identifier_plural %>"
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "/api/<%= schema.identifier_plural %>",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n\t\"label\": \"Get made\",\n\t\"assignee_id\": \"5bd10a50cc243833fc5396fc\"\n}"
+            },
+            "url": {
+              "raw": "{{host}}/api/<%= schema.identifier_plural %>",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "<%= schema.identifier_plural %>"
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "/api/<%= schema.identifier_plural %>/:id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{host}}/api/<%= schema.identifier_plural %>/5bd10a59cc243833fc5396fd",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "<%= schema.identifier_plural %>",
+                "5bd10a59cc243833fc5396fd"
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "/api/<%= schema.identifier_plural %>/:id",
+          "request": {
+            "method": "PUT",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{host}}/api/<%= schema.identifier_plural %>/5bd10a59cc243833fc5396fd",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "<%= schema.identifier_plural %>",
+                "5bd10a59cc243833fc5396fd"
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        },
+        {
+          "name": "/api/<%= schema.identifier_plural %>/:id",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "body": {},
+            "url": {
+              "raw": "{{host}}/api/<%= schema.identifier_plural %>/5bd10a59cc243833fc5396fd",
+              "host": [
+                "{{host}}"
+              ],
+              "path": [
+                "api",
+                "<%= schema.identifier_plural %>",
+                "5bd10a59cc243833fc5396fd"
+              ]
+            },
+            "description": ""
+          },
+          "response": []
+        }
+      ]
+    },
+    <%_ }) _%>
+  ],
+  "variable": [
+    {
+      "id": "XXab2fa-8350-4b78-b612-f822e33f4793",
+      "key": "host",
+      "value": "localhost:4000",
+      "type": "text"
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "codotype-postman-collection",
+  "label": "Flask",
+  "icon": "devicon-python-plain",
+  "description": "Postman is a very helpful API development tool",
+  "tech_tags": ["Postman"],
+  "type_tags": ["API"],
+  "self_configuring": false,
+  "project_path": "postman-collection",
+  "addons": [],
+  "global_options": [],
+  "model_options": [],
+  "github_url": "codotype/codotype-postman-collection-generator",
+  "version": "0.1.0",
+  "official": true
+}
