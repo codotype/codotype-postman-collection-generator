@@ -1,2 +1,4 @@
-# codotype-flask-postgresql-generator
-Codotype generator for Python, Flask, &amp; PostgreSQL
+# codotype-postman-collection-generator
+:postbox: Codotype generator for Postman Collections
+
+TODO - add more documentation to this README.md file
