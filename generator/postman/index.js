@@ -8,7 +8,7 @@ module.exports = class PostmanCollectionJson extends Generator {
 
 
     // Defines a new model object
-    // TODO - abstract this into @codotype/util
+    // TODO - abstract this into @codotype/util (without stringify + escape)
     function buildModelObject (schema) {
       let newModel = {}
 
@@ -41,7 +41,7 @@ module.exports = class PostmanCollectionJson extends Generator {
       return stringified.replace(/\n/g, "\\n").replace(/\"/g, '\\"')
     }
 
-    // Copies models
+    // Compiles the postman-collection template
     await this.copyTemplate(
       this.templatePath('postman-collection.json'),
       this.destinationPath(blueprint.identifier + '.postman_collection.json'),
