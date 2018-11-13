@@ -1,6 +1,6 @@
-const Generator = require('@codotype/generator')
 
-module.exports = class PostmanCollection extends Generator {
+module.exports = {
+  name: 'PostmanCollection',
   async write () {
     await this.composeWith('./base')
     await this.composeWith('./postman')

@@ -1,8 +1,6 @@
-const Generator = require('@codotype/generator')
 
-// // // //
-
-module.exports = class PostmanCollectionBase extends Generator {
+module.exports = {
+  name: 'PostmanCollectionBase',
   async write () {
     await this.copyDir(
       this.templatePath(),

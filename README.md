@@ -1,4 +1,11 @@
-# codotype-postman-collection-generator
-:postbox: Codotype generator for Postman Collections
+# Postman Collection Generator
+:postbox: Generates a Postman Collection to interface with REST APIs
 
-TODO - add more documentation to this README.md file
+Use [Postman](https://www.getpostman.com/) to run requests, test & debug, create automated tests, and mock, document &
+ monitor an API.
+
+## Setup
+
+1. Install [Postman](https://www.getpostman.com/) locally on your computer.
+
+2. Import the Postman Collection JSON file. See the [Postman Collection](https://www.getpostman.com/collection) documentation to learn more

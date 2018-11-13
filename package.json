@@ -1,27 +1,27 @@
 {
-  "name": "codotype-flask-postgresql-generator",
+  "name": "codotype-postman-collection-generator",
   "version": "0.1.0",
-  "description": "A codotype generator for Vue.js, Vue Router, Vuex, &amp; Bootstrap",
+  "description": "A codotype generator for Postman Collections",
   "main": "index.js",
   "scripts": {
-    "test": "node index.js"
+    "test": "node test.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/codotype/codotype-flask-postgresql-generator.git"
+    "url": "git+https://github.com/codotype/codotype-postman-collection-generator.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/codotype/codotype-flask-postgresql-generator/issues"
+    "url": "https://github.com/codotype/codotype-postman-collection-generator/issues"
   },
-  "homepage": "https://github.com/codotype/codotype-flask-postgresql-generator#readme",
+  "homepage": "https://github.com/codotype/codotype-postman-collection-generator#readme",
   "dependencies": {
-    "@codotype/generator": "^0.2.0"
+    "@codotype/generator": "^0.4.0"
   },
   "devDependencies": {
     "@codotype/blueprints": "^0.2.0",
     "@codotype/util": "^0.3.0",
-    "@codotype/runtime": "^0.4.0"
+    "@codotype/runtime": "^0.5.0"
   }
 }
