@@ -1,9 +1,6 @@
-const Generator = require('@codotype/generator')
-const _ = require('lodash')
 
-// // // //
-
-module.exports = class PostmanCollectionJson extends Generator {
+module.exports = {
+  name: 'PostmanCollectionJSON',
   async write ({ blueprint }) {
 
 
